@@ -129,6 +129,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="multicast-socket-app.cpp" />
+    <ClCompile Include="MulticastSocket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MulticastSocket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
