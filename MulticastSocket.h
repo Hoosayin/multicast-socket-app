@@ -19,7 +19,7 @@ constexpr auto BUFFER_SIZE = 1024;
 class MulticastSocket
 {
 private:
-	SOCKET m_socketHandle {};
+	SOCKET m_socketHandle{};
 
 	struct sockaddr_in m_bindAddress{};
 	struct sockaddr_in m_multicastGroupAddress{};

@@ -162,7 +162,7 @@ bool MulticastSocket::Intialize(
         if (result == SOCKET_ERROR)
         {
             std::cout << "WSAEventSelect() failed with error " << WSAGetLastError() << std::endl;
-            CleanUp();
+            std::cout << "Termintating Reception Thread after failing to Select Network Events." << std::endl;
             return;
         }
 
@@ -171,7 +171,10 @@ bool MulticastSocket::Intialize(
         {
             // If Main Thread is waiting for Reception Thread to Join.
             if (m_threadJoinRequested == true)
+            {
+                std::cout << "Termintating Reception Thread after Join Requested." << std::endl;
                 break;
+            }
 
             // Receive Notification of Network Events.
             WSANETWORKEVENTS networkEvents{};
